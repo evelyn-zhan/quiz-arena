@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+
+        <title>Quiz Arena</title>
+    </head>
+
+    <body class="bg-zinc-900 text-white relative">
+        <main class="p-24 flex flex-col items-center gap-y-8">
+            <div id="countdown-container" class="absolute top-0 z-10 w-full h-screen flex items-center justify-center">
+                <span id="countdown" class="text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#9038fc] to-[#57ddec] transition ease-in-out duration-500"></span>
+            </div>
+
+            <div id="quiz-container" class="w-full flex flex-col items-center justify-center gap-y-8">
+                <span id="timer" class="p-2 w-[50px] h-[50px] self-end text-2xl font-bold text-center bg-[#9038fc] border-[1px] border-[#9038fc] rounded-full">30</span>
+                <span id="question-number" class="px-5 py-1 text-xl font-bold bg-[#9038fc] rounded-lg"></span>
+                <p id="question" class="text-xl font-medium text-center"></p>
+                <div class="grid grid-cols-2 gap-4">
+                    <span id="option-a" class="px-5 py-3 cursor-pointer w-80 text-lg font-medium bg-[#9038fc] rounded-lg hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] transition ease-in-out duration-500"></span>
+                    <span id="option-b" class="px-5 py-3 cursor-pointer w-80 text-lg font-medium bg-[#9038fc] rounded-lg hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] transition ease-in-out duration-500"></span>
+                    <span id="option-c" class="px-5 py-3 cursor-pointer w-80 text-lg font-medium bg-[#9038fc] rounded-lg hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] transition ease-in-out duration-500"></span>
+                    <span id="option-d" class="px-5 py-3 cursor-pointer w-80 text-lg font-medium bg-[#9038fc] rounded-lg hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] transition ease-in-out duration-500"></span>
+                </div>
+            </div>
+
+            <div id="quiz-end-container" class="absolute top-0 z-10 w-full h-screen flex items-center justify-center">
+                <span id="quiz-end-message" class="text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#9038fc] to-[#57ddec] transition ease-in-out duration-500"></span>
+            </div>
+        </main>
+    </body>
+
+    <script type="module" src="/quiz.js"></script>
+</html>

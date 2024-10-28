@@ -16,7 +16,7 @@
     </head>
 
     <body class="bg-zinc-900 text-white">
-        <header class="px-10 py-6 bg-[#9038fc]">
+        <header id="header" class="px-10 py-6 bg-[#9038fc]">
             <nav class="flex items-center justify-between gap-x-16">
                 <div class="flex items-center gap-x-4">
                     <img src="/assets/logo.png" alt="logo" class="w-12 h-12">
@@ -33,12 +33,14 @@
                 <p class="text-2xl">Let's see how high you can score in 30 seconds!</p>
             </div>
             <div class="flex items-center gap-x-4">
-                <input type="text" placeholder="Enter number of questions" autocomplete="off" class="px-5 py-2 w-[300px] bg-transparent border-[3px] border-[#9038fc] focus:outline-none focus:border-[#57ddec] rounded-lg placeholder-gray-400 text-lg text-center" />
-                <button class="px-6 py-2.5 flex items-center gap-x-2 transition ease-in-out duration-500 bg-[#9038fc] hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] hover:-translate-y-1 rounded-lg font-bold text-xl">
+                <input type="number" placeholder="Enter number of questions" autocomplete="off"  id="number-of-questions" class="px-5 py-2 w-[300px] bg-transparent border-[2px] border-[#9038fc] focus:outline-none focus:border-[#57ddec] rounded-lg placeholder-gray-400 text-lg text-center" />
+                <a href="/quiz" id="play-button" class="px-6 py-2.5 flex items-center gap-x-2 transition ease-in-out duration-500 bg-[#9038fc] hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] hover:-translate-y-1 rounded-lg font-bold text-xl">
                     <i class="ri-play-large-fill"></i>
                     <span>Start</span>
-                </button>
+                </a>
             </div>
         </main>
     </body>
+
+    <script src="/script.js"></script>
 </html>

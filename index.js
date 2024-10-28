@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
 })
 
+app.get('/quiz', (req, res) => {
+    res.sendFile(__dirname + '/public/quiz.html')
+})
+
 app.listen(port, () => {
     console.log(`Server running at http://${hostname}:${port}/`)
 })
