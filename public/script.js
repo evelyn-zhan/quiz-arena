@@ -5,8 +5,8 @@ playButton.addEventListener('click', (event) => {
 
     numberOfQuestions = document.getElementById('number-of-questions').value
 
-    if(!numberOfQuestions || numberOfQuestions < 5) {
-        alert('Number of questions must be at least 5.')
+    if(!numberOfQuestions || numberOfQuestions < 5 || numberOfQuestions > 20) {
+        alert('Number of questions must be around 5 to 20.')
         return
     }
 

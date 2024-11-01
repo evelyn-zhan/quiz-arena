@@ -71,7 +71,7 @@ async function startQuiz() {
     }
 
     const timer = document.getElementById('timer')
-    let time = 30
+    let time = 60
 
     const quizTimer = setInterval(() => {
         time -= 1
@@ -111,19 +111,20 @@ async function startQuiz() {
         localStorage.setItem('correct', correct)
         localStorage.setItem('incorrect', incorrect)
         localStorage.setItem('time', time)
+        localStorage.setItem('not-answered', questions.length - (correct + incorrect))
 
         if(!localStorage.getItem('total-correct')) {
             localStorage.setItem('total-correct', correct)
         } else {
             const totalCorrect = localStorage.getItem('total-correct')
-            localStorage.setItem('total-correct', totalCorrect + correct)
+            localStorage.setItem('total-correct', parseInt(totalCorrect) + parseInt(correct))
         }
 
         if(!localStorage.getItem('total-incorrect')) {
             localStorage.setItem('total-incorrect', incorrect)
         } else {
             const totalIncorrect = localStorage.getItem('total-incorrect')
-            localStorage.setItem('total-incorrect', totalIncorrect + incorrect)
+            localStorage.setItem('total-incorrect', parseInt(totalIncorrect) + parseInt(incorrect))
         }
 
         setTimeout(() => {
