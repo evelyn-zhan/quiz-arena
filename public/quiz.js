@@ -113,19 +113,11 @@ async function startQuiz() {
         localStorage.setItem('time', time)
         localStorage.setItem('not-answered', questions.length - (correct + incorrect))
 
-        if(!localStorage.getItem('total-correct')) {
-            localStorage.setItem('total-correct', correct)
-        } else {
-            const totalCorrect = localStorage.getItem('total-correct')
-            localStorage.setItem('total-correct', parseInt(totalCorrect) + parseInt(correct))
-        }
+        const totalCorrect = localStorage.getItem('total-correct')
+        localStorage.setItem('total-correct', parseInt(totalCorrect) + parseInt(correct))
 
-        if(!localStorage.getItem('total-incorrect')) {
-            localStorage.setItem('total-incorrect', incorrect)
-        } else {
-            const totalIncorrect = localStorage.getItem('total-incorrect')
-            localStorage.setItem('total-incorrect', parseInt(totalIncorrect) + parseInt(incorrect))
-        }
+        const totalIncorrect = localStorage.getItem('total-incorrect')
+        localStorage.setItem('total-incorrect', parseInt(totalIncorrect) + parseInt(incorrect))
 
         setTimeout(() => {
             window.location.href = '/result'
