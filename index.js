@@ -1,4 +1,5 @@
 import express from 'express'
+import mysql2 from 'mysql2'
 import { fileURLToPath } from 'url'
 import { dirname } from 'path'
 
@@ -11,8 +12,36 @@ const __dirname = dirname(__filename)
 
 app.use(express.static('public'))
 
+const db = mysql2.createConnection({
+    host: 'localhost',
+    port: 3308,
+    user: 'root',
+    password: '',
+    database: 'quiz_arena'
+})
+
+db.connect((err) => {
+    if(err) {
+        console.log('Database is not connected')
+        console.log(err)
+    } else {
+        console.log('Database is connected')
+    }
+})
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
+})
+
+app.get('/categories', (req, res) => {
+    let sql = "SELECT * FROM category ORDER BY id DESC;";
+    db.query(sql, (err, result) => {
+        if(err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+    })
 })
 
 app.get('/quiz', (req, res) => {

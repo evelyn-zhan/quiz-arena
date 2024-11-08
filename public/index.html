@@ -41,13 +41,14 @@
             </div>
             <div class="flex items-center gap-x-4">
                 <input type="number" placeholder="Enter number of questions" autocomplete="off"  id="number-of-questions" class="px-5 py-2 w-[300px] bg-transparent border-[2px] border-[#9038fc] focus:outline-none focus:border-[#57ddec] rounded-lg placeholder-gray-400 text-lg text-center" />
-                <a href="/quiz" id="play-button" class="px-6 py-2.5 flex items-center gap-x-2 transition ease-in-out duration-500 bg-[#9038fc] hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] hover:-translate-y-1 rounded-lg font-bold text-xl">
-                    <i class="ri-play-large-fill"></i>
-                    <span>Start</span>
-                </a>
+                <select name="category" id="category" placeholder="Select a category" class="px-5 py-2 w-[250px] bg-transparent border-[2px] border-[#9038fc] focus:outline-none focus:border-[#57ddec] rounded-lg text-lg"></select>
             </div>
+            <a href="/quiz" id="play-button" class="px-6 py-2.5 flex items-center gap-x-2 transition ease-in-out duration-500 bg-[#9038fc] hover:bg-gradient-to-r from-[#9038fc] to-[#57ddec] hover:-translate-y-1 rounded-lg font-bold text-xl">
+                <i class="ri-play-large-fill"></i>
+                <span>Start</span>
+            </a>
         </main>
     </body>
 
-    <script src="/script.js"></script>
+    <script type="module" src="/script.js"></script>
 </html>

@@ -26,9 +26,9 @@ const countdownInterval = setInterval(() => {
 // https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple
 // https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple
 
-async function getData(numberOfQuestions) {
+async function getData(numberOfQuestions, category) {
     try {
-        const res = await fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=9&difficulty=easy&type=multiple`)
+        const res = await fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=easy&type=multiple`)
         const data = await res.json()
         return data.results
     } catch(error) {
@@ -43,7 +43,8 @@ setTimeout(() => {
 
 async function startQuiz() {
     const numberOfQuestions = localStorage.getItem('numberOfQuestions')
-    const questions = await getData(numberOfQuestions)
+    const category = localStorage.getItem('category')
+    const questions = await getData(numberOfQuestions, category)
     
     document.getElementById('quiz-container').style.display = ''
     const questionNumber = document.getElementById('question-number')
