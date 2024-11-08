@@ -8,7 +8,7 @@ if(!localStorage.getItem('total-incorrect')) {
 
 async function fetchCategory() {
     try {
-        const res = await fetch('/categories')
+        const res = await fetch('/api/categories')
         const data = await res.json()
         return data
     } catch(err) {

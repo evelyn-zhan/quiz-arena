@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
 })
 
-app.get('/categories', (req, res) => {
+app.get('/api/categories', (req, res) => {
     let sql = "SELECT * FROM category ORDER BY id DESC;";
     db.query(sql, (err, result) => {
         if(err) {
