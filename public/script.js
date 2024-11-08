@@ -1,3 +1,11 @@
+if(!localStorage.getItem('total-correct')) {
+    localStorage.setItem('total-correct', 0)
+}
+
+if(!localStorage.getItem('total-incorrect')) {
+    localStorage.setItem('total-incorrect', 0)
+}
+
 playButton = document.getElementById('play-button')
 
 playButton.addEventListener('click', (event) => {
