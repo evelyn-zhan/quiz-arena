@@ -22,8 +22,8 @@ const db = mysql2.createConnection({
 
 db.connect((err) => {
     if(err) {
-        console.log('Database is not connected')
-        console.log(err)
+        console.log('Database is not connected!')
+        // console.log(err)
     } else {
         console.log('Database is connected')
     }

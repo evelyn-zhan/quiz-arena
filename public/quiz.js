@@ -23,9 +23,6 @@ const countdownInterval = setInterval(() => {
     }
 }, 1500)
 
-// https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple
-// https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple
-
 async function getData(numberOfQuestions, category) {
     try {
         const res = await fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=easy&type=multiple`)
