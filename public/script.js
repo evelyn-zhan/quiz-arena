@@ -29,7 +29,7 @@ const playButton = document.getElementById('play-button')
 playButton.addEventListener('click', (event) => {
     event.preventDefault()
 
-    const numberOfQuestions = document.getElementById('number-of-questions').value || 5
+    const numberOfQuestions = document.getElementById('number-of-questions').value
     const category = document.getElementById('category').value || "9"
 
     if(!numberOfQuestions || numberOfQuestions < 5 || numberOfQuestions > 20) {
